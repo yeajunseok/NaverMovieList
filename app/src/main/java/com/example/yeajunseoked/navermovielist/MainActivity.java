@@ -1,5 +1,6 @@
 package com.example.yeajunseoked.navermovielist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "작성하기 눌림", Toast.LENGTH_SHORT).show();
-
+                Intent intent = new Intent(getApplicationContext(), CommentWriteActivity.class);
+                startActivityForResult(intent, 101); //응답받기 위해서 forresult
             }
         });
 
