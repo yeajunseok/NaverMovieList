@@ -70,15 +70,16 @@ public class MainActivity extends AppCompatActivity {
         allseeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "모두보기 눌림", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), CommentAllSeeActivity.class);
+                startActivityForResult(intent, 102);
             }
         });
 
         writeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "작성하기 눌림", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), CommentWriteActivity.class);
+                //intent.putExtra(CommentWriteActivity.INTENT_KEY ,)
                 startActivityForResult(intent, 101); //응답받기 위해서 forresult
             }
         });
@@ -86,11 +87,12 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listView);
         CommentAdapter adapter = new CommentAdapter();
         adapter.addItem(new CommentItem("kym**","10분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0"));
-        adapter.addItem(new CommentItem("kym**","10분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0"));
+        adapter.addItem(new CommentItem("aaa**","20분전", "웃긴 내용보다는 좀 더 진지한 영화", "추천 1"));
+        adapter.addItem(new CommentItem("bbb**","30분전", "연기가 부족한 느낌이 드는 배우도 있다. 그래도 전체적으로는 재밌다.", "추천 0"));
+        adapter.addItem(new CommentItem("ccc**","40분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0"));
+        adapter.addItem(new CommentItem("ddd**","50분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0"));
 
         listView.setAdapter(adapter);
-
-
     }
 
     class CommentAdapter extends BaseAdapter { //데이터 관리 & 아이템 뷰 생성

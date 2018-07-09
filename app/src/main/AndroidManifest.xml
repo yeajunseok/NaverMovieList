@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CommentWriteActivity"></activity>
+        <activity android:name=".CommentWriteActivity"
+            android:label="한줄평 작성"/>
+        <activity android:name=".CommentAllSeeActivity"
+            android:label="한줄평 목룍"></activity>
     </application>
 
 </manifest>

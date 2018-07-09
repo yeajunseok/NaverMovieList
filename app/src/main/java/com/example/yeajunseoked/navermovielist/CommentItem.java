@@ -1,6 +1,9 @@
 package com.example.yeajunseoked.navermovielist;
+
+import java.io.Serializable;
+
 /*한명을 위한  데이터만 들어간다. */
-public class CommentItem {
+public class CommentItem implements Serializable{
     String name;
     String time;
     String comment;
